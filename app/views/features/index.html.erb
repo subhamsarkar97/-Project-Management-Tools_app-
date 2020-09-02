@@ -1,0 +1,10 @@
+<%= render "navbar" %>
+
+<section class="container searched">
+    <span>Searched Features</span>
+    <hr>
+    <% @feature.each do |f| %>
+        Title:- <%= f.title %><br>
+        <%= link_to "See more",f, method: :get %><br><br>
+    <%end%>    
+</section>

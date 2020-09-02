@@ -1,0 +1,12 @@
+<%=render 'navbar'%>
+<div class = "view container">
+    <h2>Feature Dashboard</h2><hr>
+    <div class = "feature_list">
+        <% @feature.each do |f| %>
+            <%= f.title %><br>
+                <div class = "see_more_about_feature">
+                    <%= link_to "show more", f %>
+                </div>  
+        <% end %>    
+    </div>       
+</div>

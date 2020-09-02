@@ -1,0 +1,9 @@
+<section class="edit add_task">
+    <%= form_tag savetask_features_path, method: :post, remote: true do |f| %> 
+        <%= check_box_tag "feature[jobs_ids][]", job.id %>
+        <%= label_tag job.taskname %><br>
+        <%= label_tag job.description%><br>
+        <%= submit_tag "SAVE", class: "btn btn-primary" %>  
+    <%end%>     
+</section>  
+

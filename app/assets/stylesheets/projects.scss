@@ -1,0 +1,59 @@
+// Place all the styles related to the projects controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.new_project > p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#col1 > p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#col2 > p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#col3 > p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.project_container > span {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.dashboard {
+    margin-top: 16px;
+}
+
+.search_feature_project {
+    margin-bottom: 164px;
+}
+
+.add_feature,
+.view_features {
+    margin-bottom: 10px;
+}
+
+.view {
+    margin-bottom: 476px;
+}
+
+.close1,
+.close2,
+.close3 {
+    margin-top: 10px;
+}
+
+.see_more_about_feature1 {
+    margin-bottom: 15px;
+}
+
+.project_assigned {
+    margin-bottom: 10px;
+}

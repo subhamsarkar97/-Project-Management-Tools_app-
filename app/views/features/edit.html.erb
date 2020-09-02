@@ -1,0 +1,44 @@
+<%=render 'navbar'%>
+<section class="container edit_feature">
+    <h4>Update the Feature</h4>
+    <%= form_for(@feature, html: { multipart: true }) do |f| %>
+        <%= render 'shared/error_features_messages' %>
+        <div class="field">
+            <%= f.label :status %>
+            <%= f.select(:status, Feature::STATUS_LIST) %><br>
+        </div>
+        <div class="field">
+            <%= f.label :title %><br>
+            <%= f.text_field :title, placeholder: "Title...", class: "form-control"  %><br>
+        </div>
+        <div class="field">
+            <%= f.label :description %><br>
+            <%= f.text_area :description, placeholder: "Description...", class: "form-control"  %><br>
+        </div><br>
+        
+        <div class = "feature_panel">
+            <%= f.label "Panel"%><br>
+            <%= f.select(:panel, Feature::PANEL_LIST) %>
+        </div>
+        <span class="picture">
+            <%= f.file_field :picture %>
+        </span><br><br>
+        
+        <%=f.hidden_field :project_id, value: params[:project_id]%>
+        
+        <hr>
+        
+        <h4>Add Task </h4>
+        <section id = "tasks">
+            <div class="fields">
+                <%=f.fields_for :jobs do |f|  %>
+                    <%= render 'job_fields', f: f%>
+                <%end%>
+                <%= link_to_add_fields "Add a task", f, :jobs %>
+            </div>   
+        </section>
+        <%= f.submit "Submit", class: "btn btn-primary" %>
+    <% end %> 
+</section>
+
+

@@ -1,0 +1,30 @@
+<section class="container">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <p>Project Management Tool</p>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button> 
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <%= link_to "PROFILE",user_path(@user_id) , method: :get, class: "custom5"%>
+                </li>
+                <li class="nav-item active">
+                    <%= link_to "LOG OUT", welcome_path , method: :delete, class: "custom5"%>
+                </li>
+            </ul>
+        </div>
+    </nav> 
+</section>
+
+<section class = "container notification">
+    <p>Notifications:-</p>
+    <div>
+        <% @activities.each do |activity| %>
+            <div class = "activity"> 
+                <%= link_to activity.owner.firstname, activity.owner if activity.owner %>
+            </div>
+        <%end%>    
+    </div>
+</section>
+

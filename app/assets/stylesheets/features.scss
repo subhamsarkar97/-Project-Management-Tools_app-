@@ -1,0 +1,81 @@
+// Place all the styles related to the features controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.feature_info > p {
+    font-size: 15px;
+}
+
+.Task > p {
+    font-size: 15px;
+}
+
+.create_feature_form {
+    margin-bottom: 80px;
+}
+
+.searched {
+    margin-bottom: 469px;
+}
+
+.searched > span {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.show_feature {
+    margin-bottom: 80px;
+}
+
+.feature_status,
+.feature_panel,
+.feature_title,
+.feature_description,
+.identity_token {
+    margin-bottom: 10px;
+}
+
+.edit_feature {
+    margin-bottom: 80px;
+}
+
+.picture {
+    position: relative;
+}
+
+.feature_picture {
+    position: absolute;
+    left: 40px;
+}
+
+.feature_info {
+    margin-bottom: 70px;
+}
+
+.feature_picture > span {
+    font-weight: bold;
+}
+
+.add_task {
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+.see_more_about_feature {
+    margin-bottom: 30px;
+}
+
+.feature_panel {
+    margin-bottom: 10px;
+}
+
+.field {
+    margin-bottom: 10px;
+}
+
+.update_feature {
+    margin: 20px 0px;
+}
+
+.assigned_member > p {
+    font-size: 24px;
+}

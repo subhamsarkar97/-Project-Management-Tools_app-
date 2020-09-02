@@ -1,0 +1,71 @@
+<%=render 'navbar'%>
+<section class="container create_feature_form">
+    <h4>Create New Feature</h4>
+    <%= form_for(@feature, html: { multipart: true }) do |f| %>
+        <div class="field">
+            <%= f.label :status %>
+            <%= f.select(:status, Feature::INITIAL_LIST) %>
+        </div>
+        <p >Assign Member:--</h4>
+        <div class="field">
+            <%= f.label "Members email" %>
+            <%= f.select(:mailId, Feature::EMAIL_LIST) %>
+        </div>
+        <h5>Feature Information:--</h5>
+        <div class="field">
+            <%= f.label :title %><br>
+            <%= f.text_field :title, placeholder: "Title...",class: "form-control" %>
+        </div>
+        <div class="field">
+            <%= f.label :description %><br>
+            <%= f.text_area :description, placeholder: "Description...",class: "form-control" %>
+        </div><br>
+        <span class="picture field">
+            <%= f.file_field :picture %>
+        </span>
+        
+        <div class="field">
+            <%=f.hidden_field :project_id, value: params[:project_id]%>
+            <%= f.hidden_field :panel, value: params[:panel] %>
+        </div>
+
+        <hr>
+        <h4>Add Task </h4>
+        <section id = "tasks" class = "field">
+            <div class="fields">
+                <%=f.fields_for :jobs do |f|  %>
+                    <%= render 'job_fields', f: f%>
+                <%end%>
+                <%= link_to_add_fields "Add more task", f, :jobs %>
+            </div>   
+        </section>
+        <%= f.submit "Submit", class: "btn btn-primary" %>
+    <% end %>   
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  

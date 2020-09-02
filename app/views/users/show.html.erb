@@ -1,0 +1,55 @@
+<section class="container">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <%= link_to "Project Management Tool", user_path(@user), method: :get ,class: "heading_navbar" %>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button> 
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <%= link_to "YOUR PROJECTS", user_projects_profile_path(@user) , method: :get, class: "custom5" %>
+                </li>
+                <li class="nav-item active">
+                    <%= link_to "ASSIGNED PROJECTS", user_assigned_project_path(@user) , method: :get, class: "custom5" %>
+                </li>
+                <li class="nav-item active">
+                    <%= link_to "EDIT PROFILE", edit_user_path , method: :get, class: "custom5"%>
+                </li>
+                <li class="nav-item active">
+                    <%= link_to "DELETE PROFILE", user_path , method: :delete , data: { confirm: "Are you sure?"}, :class => "custom5" %> 
+                </li>
+                <li class="nav-item active">
+                    <%= link_to "LOG OUT", welcome_path , method: :delete, :class => "custom5" %>
+                </li>
+            </ul>
+        </div>
+    </nav> 
+</section>
+
+<section class = "profile_picture container">
+    <%= image_tag @user.image.url if @user.image? %>
+    <div>
+        <span class="picture_text">
+            <p><%=@user.firstname%> <%= @user.lastname%><p>
+        </span>
+    </div>
+</section>  
+
+<div class="auth_section">
+    <section class="container">    
+        <h1 class="text-center">Welcome <%=@user.firstname%></h1>
+        <p class="text-center">This is our home page click the below button to Create Project</p>
+        <%= link_to " Create Project", create_project_path ,method: :get, :class => "btn btn-primary button fa fa-plus-circle rend"%>
+    </section>
+</div>
+
+<p class="text-center text">Search for the feature</p>
+
+<div class = "search_feature_user">
+    <%= render 'projects/search' %>
+</div>    
+
+
+
+
+      

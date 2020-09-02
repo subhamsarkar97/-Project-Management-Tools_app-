@@ -1,0 +1,92 @@
+<section class="container">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <%= link_to "Project Management Tool", user_path(@user_id), method: :get ,class: "heading_navbar" %>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button> 
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <%= link_to "PROFILE",user_path(@user_id) , method: :get, class: "custom5"%>
+                </li>
+                <li class="nav-item active">
+                    <%= link_to "ALL PROJECTS", user_projects_profile_path(@user_id), method: :get, class: "custom5"%>
+                </li>
+                <li class="nav-item active">
+                    <%= link_to "DELETE FEATURE", feature_path, method: :delete, data: {confirm: "Are You Sure?"} ,class: "custom5"%>
+                </li>
+                <li class="nav-item active">
+                    <%= link_to "LOG OUT", welcome_path , method: :delete, class: "custom5"%>
+                </li>
+            </ul>
+        </div>
+    </nav> 
+</section>
+<section class="container show_feature">
+    <div class="about_feature">
+        <div class = "assigned_member">
+            <p>Assigned Member</p>
+            <span> Email:--  <%= @feature.mailId %><br></span>
+        </div>
+        <hr>
+        <div class= "feature_info">
+            <h3>Feature Information :-- </h3><br>
+            <div class = "feature_status">    
+                <span>Status:--<%=@feature.status%></span>
+            </div>
+            <div class = "identity_token">
+                <span>Identification Token :-- <%=@feature.identity_token %></span>
+            </div>
+            <div class = "feature_panel">    
+                <span>Panel:- <%= @feature.panel %><br></span>
+            </div>    
+            <div class = "feature_title">    
+                <span> Feature Title:--  <%= @feature.title %></span>
+            </div>
+            <div class = "feature_description">    
+                    <span>  Feature Description:--</span>
+                    <%= @feature.description %>
+            </div> 
+            
+            <section class = "picture">
+                <%= image_tag @feature.picture.url if @feature.picture? %>
+                <% if @feature.picture %>    
+                    <div class = "feature_picture">
+                        <span>Feature Picture</>
+                    </div>
+                <%end%>        
+            </section>  
+        </div>
+        
+        <div class="Task">
+            <h3>Task Information:-  </h3>
+            <span>No of Tasks:- <%= @feature.jobs.count %></span><br>
+            <span>No of Tasks Completed:-(<%=@feature.jobs.count%>/0)</span><br>
+            <%= render @feature.jobs %>       
+        </div>
+
+        <div class = "update_feature">
+            <%=link_to 'Add more task or edit feature',  edit_feature_path({project_id: @feature.project_id}), method: :get, class: 'btn btn-primary'%>
+        </div>
+    </div>
+
+    <section class="Chat_box">
+        <div id = "chat_box">
+            <h4>Comment Box</h4>
+            Comments:- 
+            <div id = "comments">
+                <%= render @feature.comments %>
+            </div>
+        </div>    
+    </section> 
+    <hr>
+    
+    <section class="Comments">
+        <div class="comment-form">
+            <span>Leave a reply:-</span>
+            <%= render 'comments/form' %>
+        <div>    
+    </section>
+</section>
+
+

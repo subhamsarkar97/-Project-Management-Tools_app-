@@ -1,0 +1,52 @@
+<section class="container sign_up_form">   
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <h1>Sign Up</h1>
+            <%= form_for(@user, html: { multipart: true }) do |p| %>
+                <%= render 'shared/error_messages'%>
+                <div class = "firstname space">
+                    <%= p.label "Firstame"%><br>
+                    <%= p.text_field :firstname, placeholder: "firstname ...", class: "form-control"%>
+                </div>
+                <div>
+                    <%= p.label "Lastname"%><br>
+                    <%= p.text_field :lastname, placeholder: "lastname ...", class: "form-control"%>
+                </div>
+                <div class = "gender space">
+                    <%= p.label "Gender"%><br>
+                    <%= p.select(:gender, User::GENDER_LIST) %>
+                </div>    
+                
+                <div class = "picture space">
+                    <%= p.label "Profile picture" %><br>
+                    <%= p.file_field :image, accept: 'image/jpeg,image/gif,image/png' %>
+                </div>
+
+                <div class = "Email space">
+                    <%= p.label "Email"%><br>
+                    <%= p.email_field :username, placeholder: "Email ...", class: "form-control"%>
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+
+                <div class = "password form-group space">
+                    <%= p.label :password%><br>
+                    <%= p.password_field :password, placeholder: "New password", class: "form-control"%><br>
+                </div>
+                
+                <%= p.submit "Create User", class: "btn btn-primary" %>
+            <% end %>
+            <%= link_to "Sign in with Outlook account", "/auth/microsoft_graph_auth", method: :post %>
+        </div>
+    </div>        
+</section>
+
+<script type="text/javascript">
+    $('#new_user').bind('change', function() {
+        var size_in_megabytes = this.files[0].size/1024/1024;
+        if (size_in_megabytes > 5) {
+            alert('Maximum file size is 5MB. Please choose a smaller file.');
+        }
+    });
+</script>
+
+

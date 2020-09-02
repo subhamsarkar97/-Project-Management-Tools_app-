@@ -1,0 +1,57 @@
+<section class="container">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <%= link_to "Project Management Tool", welcome_path, method: :get, class: "heading_navbar" %>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <%= link_to "LOGIN", login_path , method: :get, :class => "custom5"%>
+                </li>
+                <li class="nav-item">
+                    <%= link_to "SIGN UP", new_user_path , method: :get,:class => "custom5"%>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</section>
+
+<div class="welcome_section">
+    <section class="container">    
+        <h1 class="text-center">Welcome to the Project</h1>
+        <p class="text-center">This is a project to manage and assign project</p>
+        <%= link_to "Sign up Now", new_user_path ,method: :get, :class => "btn btn-primary button"%>
+    </section>
+</div>
+
+<article class = "container article_section">
+    <h3 class = "text-primary">About us</h3>
+    <p class = "text-secondary">
+        Project management tool has the capacity to help plan, 
+        organize, and manage resource tools and develop resource estimates. 
+        Depending on the sophistication of the software, it can manage estimation 
+        and planning, scheduling, cost control and budget management, resource allocation,
+        collaboration software, communication, decision-making, quality management, 
+        time management and documentation or administration systems. Today, numerous
+        PC and browser-based project management software and contract management 
+        software solutions exist, and are finding applications in almost every 
+        type of business. In the period between 1965 and 1969 were formed two of 
+        the leading project management associations: the International 
+        Project Management Association (IPMA) in Europe, and the Project Management
+        Institute (PMI) which trains project management professionals and issues
+        certificates. With business shifting towards technology-based and paperless 
+        methods, the first project management systems started to emerge. Oracle and 
+        Artemis launched their project managers in 1977, while Scitor Corporation did 
+        the same in 1979. Many improvements followed in the upcoming decades: 
+        in 1986, Carnegie Mellon University’s Software Engineering Institute introduced 
+        capability maturity software, a five-level project management method for 
+        rapidly maturing processes, while in 1988 users met earned value management 
+        which added processes’ scope and cost to the schedule.
+    </p>
+</article>
+
+
+      
+
+

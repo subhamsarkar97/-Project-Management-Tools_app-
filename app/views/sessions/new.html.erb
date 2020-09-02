@@ -1,0 +1,32 @@
+<section class="container login_form">
+    <div class="row">
+        <div class="col-md-6">
+            <h1>Log in</h1>
+            <%= form_tag login_path do |f| %>  
+                <div class = "form-group">
+                    <div class = "email_login space">
+                        <%= label_tag "Email"%><br>  
+                        <%= email_field_tag :username %><br>  
+                    </div>   
+                    
+                    <div class = "password_login space">  
+                        <%= label_tag "Password"%><br>  
+                        <%= password_field_tag :password%>
+                    </div>    
+                    
+                    <div class = "forget_password space">
+                        <span>Forget Password?<%= link_to "Reset", new_password_reset_path %></span><br>
+                    </div>    
+                    
+                    <div class = "remember_me space">
+                        <%= check_box_tag :remember_me, 1, params[:remember_me] %>
+                        <%= label_tag "Remember me"%><br>
+                    </div>    
+                    
+                    <%= submit_tag "Login", class: "btn btn-primary"%><br>
+                </div>
+            <% end %>
+            <p>New user? <%= link_to "Sign up now!", new_user_path %></p>
+        </div>
+    </div>        
+</section>    

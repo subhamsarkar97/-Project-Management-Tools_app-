@@ -1,0 +1,21 @@
+<section class="container">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <%= link_to "Project Management Tool", user_path(@user_id), method: :get ,class: "heading_navbar" %>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button> 
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <%= link_to "PROFILE",user_path(@user_id) , method: :get, class: "custom5"%>
+                </li>
+                <li class="nav-item active">
+                    <%= link_to "ALL PROJECTS", user_projects_profile_path(@user_id), method: :get, class: "custom5"%>
+                </li>
+                <li class="nav-item active">
+                    <%= link_to "LOG OUT", welcome_path , method: :delete, class: "custom5"%>
+                </li>
+            </ul>
+        </div>
+    </nav> 
+</section>

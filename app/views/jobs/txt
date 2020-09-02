@@ -1,0 +1,2 @@
+"feature[jobs_ids][]"
+#<%= check_box_tag "feature[jobs_ids][]", job.id %>

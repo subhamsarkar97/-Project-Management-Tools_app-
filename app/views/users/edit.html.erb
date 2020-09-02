@@ -1,0 +1,46 @@
+<section class="container form_user_edit">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <h1>Edit Profile</h1>
+            <%= form_for @user do |p| %>
+                <%= render 'shared/error_messages'%>
+                <div class = "firstname_edit space_edit">
+                    <%= p.label "Firstame"%><br>
+                    <%= p.text_field :firstname, placeholder: "firstname ...", class: "form-control"%>
+                </div>
+                
+                <div class = "lastname_edit space_edit">
+                    <%= p.label "Lastname"%><br>
+                    <%= p.text_field :lastname, placeholder: "lastname ...", class: "form-control"%>
+                </div>
+                
+                <div class = "gender space_edit">
+                    <%= p.label "Gender"%><br>
+                    <%= p.select(:gender, User::GENDER_LIST) %>
+                </div>
+
+                <div class = "picture_edit space_edit">
+                    <%= p.label "Profile picture" %><br>
+                    <%= p.file_field :image, accept: 'image/jpeg,image/gif,image/png' %>
+                </div>
+                
+                <div class = "new_password space_edit">
+                    <%= p.label :password%><br>
+                    <%= p.password_field :password, placeholder: "New password", class: "form-control"%>
+                </div>
+
+                <%= p.submit "Edit User", class: "btn btn-primary" %>
+            <% end %>
+        </div>
+    </div>        
+</section>
+
+<script type="text/javascript">
+    $('#edit_user_1').bind('change', function() {
+        var size_in_megabytes = this.files[0].size/1024/1024;
+        if (size_in_megabytes > 5) {
+            alert('Maximum file size is 5MB. Please choose a smaller file.');
+        }
+    });
+</script>
+

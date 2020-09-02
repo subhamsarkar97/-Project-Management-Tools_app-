@@ -1,0 +1,9 @@
+<%= render 'navbar' %>
+<section class="container">
+    <h2 class="text-center">DashBoard</h2> 
+    <span><%=pluralize(@user.projects.count,"Project")%></span><br>
+    <hr>
+    <ol>
+        <%= render @user.projects %>
+    </ol>
+</section>

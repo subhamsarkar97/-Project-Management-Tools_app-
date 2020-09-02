@@ -1,0 +1,17 @@
+<%= render 'navbar' %>
+<section class="container">
+    <h2 class="text-center">DashBoard</h2> 
+    <span><%=pluralize(@projects.count-1, "Project")  %></span>
+    <ol>
+        <% for i in 1..(@projects.count-1) do %>
+            <div class= "project_assigned"> 
+                <li id = "<%= @projects[i].id %>">  
+                    <span class="content"><%=link_to @projects[i].projectname, [@projects[i].user,@projects[i]] %></span><br>
+                    <span class="timestamp">
+                        Created <%= time_ago_in_words(@projects[i].created_at) %> ago.
+                    </span>
+                </li>
+            </div>                
+        <%end%>     
+    </ol>
+</section>
